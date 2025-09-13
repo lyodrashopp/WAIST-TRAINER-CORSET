@@ -1,0 +1,1245 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WAIST TRAINER CORSET - FREYANA.ID | Premium Body Shaper</title>
+    <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/animejs/lib/anime.iife.min.js"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Inter:wght@300;400;500;600;700&display=swap');
+        
+        :root {
+            --primary: #1a1a1a;
+            --secondary: #f5f5f5;
+            --accent: #d4af37;
+            --text-primary: #2d2d2d;
+            --text-secondary: #6b7280;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-primary);
+        }
+        
+        .font-display {
+            font-family: 'Playfair Display', serif;
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e076 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-bg {
+            background: linear-gradient(135deg, #f5f5f5 0%, #ffffff 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg width="60" height="60" viewBox="0 0 60 60" xmlns="http://www.w3.org/2000/svg"><g fill="none" fill-rule="evenodd"><g fill="%23d4af37" fill-opacity="0.05"><circle cx="30" cy="30" r="2"/></g></svg>');
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(180deg); }
+        }
+        
+        .product-card {
+            transition: all 0.3s ease;
+            border: 1px solid #e5e7eb;
+        }
+        
+        .product-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e076 100%);
+            color: white;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+        
+        .btn-primary::after {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: rgba(255,255,255,0.1);
+            transform: rotate(30deg);
+            transition: all 0.6s ease;
+        }
+        
+        .btn-primary:hover::after {
+            transform: rotate(30deg) translate(20%, 20%);
+        }
+        
+        .countdown-timer {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ff8e8e 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .countdown-timer::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @keyframes shine {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: var(--accent);
+            opacity: 0.3;
+        }
+        
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+        }
+        
+        .modal-content {
+            position: relative;
+            margin: 5% auto;
+            max-width: 90%;
+            max-height: 90vh;
+            animation: modalFadeIn 0.3s ease;
+        }
+        
+        @keyframes modalFadeIn {
+            from { opacity: 0; transform: scale(0.8); }
+            to { opacity: 1; transform: scale(1); }
+        }
+        
+        .close {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .close:hover {
+            color: var(--accent);
+            transform: rotate(90deg);
+        }
+        
+        .floating-order {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: white;
+            border-radius: 1rem;
+            padding: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            transform: translateY(100px);
+            opacity: 0;
+            transition: all 0.3s ease;
+            z-index: 999;
+            max-width: 300px;
+        }
+        
+        .floating-order.show {
+            transform: translateY(0);
+            opacity: 1;
+        }
+        
+        .stock-counter {
+            background: #fee2e2;
+            color: #dc2626;
+            padding: 0.5rem 1rem;
+            border-radius: 0.5rem;
+            font-weight: 600;
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.7; }
+        }
+        
+        .badge-premium {
+            background: linear-gradient(135deg, #d4af37 0%, #f9e076 100%);
+            color: white;
+            padding: 0.25rem 0.75rem;
+            border-radius: 2rem;
+            font-size: 0.75rem;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .viewer-counter {
+            position: absolute;
+            top: 1rem;
+            right: 1rem;
+            background: rgba(255,255,255,0.9);
+            padding: 0.5rem 1rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .color-option {
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            border: 2px solid #e5e7eb;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .color-option.active {
+            border-color: var(--accent);
+            transform: scale(1.1);
+        }
+        
+        .size-option {
+            padding: 0.5rem 1rem;
+            border: 2px solid #e5e7eb;
+            border-radius: 0.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        
+        .size-option.active {
+            border-color: var(--accent);
+            background: var(--accent);
+            color: white;
+        }
+        
+        .guarantee-badge {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            color: white;
+            padding: 1rem;
+            border-radius: 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .guarantee-badge::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.2), transparent);
+            animation: shine 3s infinite;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-bg::before {
+                animation: none;
+            }
+            
+            .floating-order {
+                bottom: 10px;
+                right: 10px;
+                left: 10px;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="bg-white shadow-sm sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                    <img src="https://scontent.fmlg9-1.fna.fbcdn.net/v/t39.30808-6/537194122_122187416900326048_1676337191538174460_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeFgKXFkNQ8lVCtJPC8M4jf_2sUao6v__dXaxRqjq__91cZLJU_IPYoWkqDLRgE4UPmv1T9quHQGH87QeD3WGJaM&_nc_ohc=1IXBEf5hGB4Q7kNvwG2Twkz&_nc_oc=AdnMfxO5Gf4Md-blrDKnsCvjnhan2N_JYenE3ian-74Kkx57R3uOsPjUmXWE6NyrN7Q&_nc_zt=23&_nc_ht=scontent.fmlg9-1.fna&_nc_gid=Rfwo8tJCQqCK22AwTjLcfw&oh=00_Afa9P6Ilq_oDEqoe04m15GLcolxZikv30hLD-9Gf5qilEQ&oe=68CAE454" alt="FREYANA.ID" class="w-12 h-12 rounded-full object-cover">
+                    <div>
+                        <h1 class="text-xl font-bold text-gray-900">FREYANA.ID</h1>
+                        <p class="text-sm text-gray-500">Premium Body Shaper</p>
+                    </div>
+                </div>
+                <div class="hidden md:flex items-center gap-4">
+                    <span class="badge-premium">
+                        <i data-feather="award" class="w-4 h-4"></i>
+                        Produk Premium
+                    </span>
+                    <span class="text-sm text-gray-600">Bergaransi 30 Hari</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg py-20 relative">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <div class="mb-6">
+                        <span class="badge-premium mb-4">
+                            <i data-feather="star" class="w-4 h-4"></i>
+                            Best Seller 2025
+                        </span>
+                        <h1 class="text-4xl lg:text-6xl font-display font-bold mb-4 leading-tight">
+                            WAIST TRAINER<br>
+                            <span class="gradient-text">CORSET</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 mb-6">
+                            Bentuk tubuh ideal Anda dalam 30 hari dengan teknologi kompresi premium
+                        </p>
+                    </div>
+                    
+                    <div class="mb-8">
+                        <div class="flex items-center gap-4 mb-4">
+                            <span class="text-3xl font-bold text-gray-900">Rp 159.000</span>
+                            <span class="text-lg text-gray-400 line-through">Rp 238.500</span>
+                            <span class="bg-red-100 text-red-600 px-3 py-1 rounded-full text-sm font-semibold">33% OFF</span>
+                        </div>
+                        <div class="flex items-center gap-2 mb-4">
+                            <div class="flex text-yellow-400">
+                                <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                                <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                                <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                                <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                                <i data-feather="star" class="w-5 h-5 fill-current"></i>
+                            </div>
+                            <span class="text-gray-600">(4.9/5 dari 2,847 ulasan)</span>
+                        </div>
+                    </div>
+
+                    <div class="countdown-timer mb-8">
+                        <h3 class="text-lg font-semibold mb-2">⏰ PROMO BERAKHIR DALAM:</h3>
+                        <div class="flex justify-center gap-4 text-2xl font-bold" id="countdown">
+                            <div><span id="hours">23</span> Jam</div>
+                            <div><span id="minutes">59</span> Menit</div>
+                            <div><span id="seconds">59</span> Detik</div>
+                        </div>
+                    </div>
+
+                    <div class="stock-counter mb-6">
+                        <i data-feather="alert-circle" class="w-4 h-4 inline mr-2"></i>
+                        <span id="stock-counter">Stok tersisa: 12 pcs</span>
+                    </div>
+
+                    <button onclick="scrollToOrder()" class="btn-primary w-full py-4 px-8 rounded-xl text-lg font-semibold mb-4">
+                        BELI SEKARANG - GRATIS ONGKIR
+                        <i data-feather="arrow-right" class="w-5 h-5 inline ml-2"></i>
+                    </button>
+
+                    <div class="guarantee-badge">
+                        <i data-feather="shield" class="w-6 h-6 inline mr-2"></i>
+                        <span class="font-semibold">GARANSI 30 HARI UANG KEMBALI</span>
+                    </div>
+                </div>
+
+                <div class="relative" data-aos="fade-left">
+                    <div class="viewer-counter">
+                        <div class="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
+                        <span id="viewer-count">1,234 orang melihat</span>
+                    </div>
+                    <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/b76ac86624024d76b2dc8203cce2b1c4~tplv-aphluv4xwc-resize-webp:800:800.webp" 
+                         alt="Waist Trainer Corset" 
+                         class="w-full max-w-md mx-auto rounded-2xl shadow-2xl">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problem Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Masalah yang Sering Dialami</h2>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto">
+                    Banyak wanita mengalami kepercayaan diri menurun karena bentuk tubuh yang tidak ideal
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="text-center p-6 bg-red-50 rounded-2xl" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-16 h-16 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="frown" class="w-8 h-8 text-red-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Perut Buncit</h3>
+                    <p class="text-gray-600">Membuat pakaian tidak pas dan mengurangi kepercayaan diri</p>
+                </div>
+
+                <div class="text-center p-6 bg-yellow-50 rounded-2xl" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-16 h-16 bg-yellow-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="meh" class="w-8 h-8 text-yellow-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Postur Tubuh Tidak Ideal</h3>
+                    <p class="text-gray-600">Kurangnya support untuk tulang belakang dan area perut</p>
+                </div>
+
+                <div class="text-center p-6 bg-blue-50 rounded-2xl" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <i data-feather="trending-down" class="w-8 h-8 text-blue-600"></i>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Kulit Kendor</h3>
+                    <p class="text-gray-600">Setelah kehamilan atau proses diet yang tidak tepat</p>
+                </div>
+            </div>
+
+            <div class="bg-gradient-to-r from-purple-50 to-pink-50 rounded-3xl p-8 text-center" data-aos="fade-up">
+                <h3 class="text-2xl font-display font-bold mb-4 gradient-text">Solusi Premium dari FREYANA.ID</h3>
+                <p class="text-lg text-gray-700 mb-6">
+                    Waist Trainer Corset dengan teknologi kompresi 360° dan material premium berkualitas tinggi 
+                    untuk membentuk tubuh ideal Anda dalam waktu singkat.
+                </p>
+                <div class="flex flex-wrap justify-center gap-4">
+                    <span class="badge-premium">
+                        <i data-feather="check" class="w-4 h-4"></i>
+                        Hasil Permanen
+                    </span>
+                    <span class="badge-premium">
+                        <i data-feather="check" class="w-4 h-4"></i>
+                        Nyaman Dipakai
+                    </span>
+                    <span class="badge-premium">
+                        <i data-feather="check" class="w-4 h-4"></i>
+                        Bahan Premium
+                    </span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Features -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Fitur Unggulan</h2>
+                <p class="text-lg text-gray-600">Teknologi terbaru untuk kenyamanan maksimal</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div data-aos="fade-right">
+                    <div class="space-y-6">
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="zap" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Kompresi 360°</h3>
+                                <p class="text-gray-600">Mengencangkan secara merata di seluruh area perut, pinggang, dan punggung</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="wind" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Bahan Breathable</h3>
+                                <p class="text-gray-600">Material premium yang memungkinkan kulit bernapas dan tidak panas</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="lock" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">3 Baris Hook</h3>
+                                <p class="text-gray-600">Adjustable hook system untuk ukuran yang bisa disesuaikan</p>
+                            </div>
+                        </div>
+
+                        <div class="flex gap-4">
+                            <div class="w-12 h-12 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center flex-shrink-0">
+                                <i data-feather="shield" class="w-6 h-6 text-white"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold mb-2">Bones Support</h3>
+                                <p class="text-gray-600">9 spiral bones untuk postur tubuh yang lebih baik</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div data-aos="fade-left">
+                    <div class="grid grid-cols-2 gap-4">
+                        <img src="https://ae01.alicdn.com/kf/Scea480f51b0c4dd895faea60986633acO.jpg" 
+                             alt="Waist Trainer Detail" 
+                             class="rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                             onclick="openModal(this.src)">
+                        <img src="https://ae01.alicdn.com/kf/Sa4c367afab3e44b1b773752e33681cde4.jpg" 
+                             alt="Waist Trainer Hook" 
+                             class="rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                             onclick="openModal(this.src)">
+                        <img src="https://ae01.alicdn.com/kf/S5576bddf2b9a4ff0aa97a9092c81d644I.jpg" 
+                             alt="Waist Trainer Material" 
+                             class="rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                             onclick="openModal(this.src)">
+                        <img src="https://p16-oec-sg.ibyteimg.com/tos-alisg-i-aphluv4xwc-sg/b8451a558f4b40d88003d3a4bdde7869~tplv-aphluv4xwc-resize-webp:800:800.webp" 
+                             alt="Waist Trainer Back" 
+                             class="rounded-xl shadow-lg cursor-pointer hover:scale-105 transition-transform"
+                             onclick="openModal(this.src)">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Product Gallery -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Varian Warna</h2>
+                <p class="text-lg text-gray-600">Pilih warna favorit Anda</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="product-card bg-white rounded-2xl p-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="relative mb-4">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/Sd9cd9f231cd342e6b07730bc68075f80r.jpg_960x960q75.jpg_.avif" 
+                             alt="Hitam" 
+                             class="w-full rounded-xl cursor-pointer"
+                             onclick="openModal(this.src)">
+                        <span class="absolute top-4 left-4 badge-premium">Best Seller</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Hitam Elegan</h3>
+                    <p class="text-gray-600 mb-4">Warna klasik yang cocok untuk semua outfit</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="color-option active" style="background: #000000"></div>
+                            <span class="text-sm text-gray-500">Hitam</span>
+                        </div>
+                        <span class="text-2xl font-bold">Rp 159.000</span>
+                    </div>
+                </div>
+
+                <div class="product-card bg-white rounded-2xl p-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="relative mb-4">
+                        <img src="https://ae-pic-a1.aliexpress-media.com/kf/S0211a4d7f7d441089c72fcc52dfd11d7j.jpg_960x960q75.jpg_.avif" 
+                             alt="Cream" 
+                             class="w-full rounded-xl cursor-pointer"
+                             onclick="openModal(this.src)">
+                        <span class="absolute top-4 left-4 badge-premium">Limited</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Cream Mewah</h3>
+                    <p class="text-gray-600 mb-4">Warna soft untuk tampilan feminin</p>
+                    <div class="flex items-center justify-between">
+                        <div class="flex items-center gap-2">
+                            <div class="color-option active" style="background: #f5e6d3"></div>
+                            <span class="text-sm text-gray-500">Cream</span>
+                        </div>
+                        <span class="text-2xl font-bold">Rp 159.000</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="py-20 bg-gradient-to-br from-pink-50 to-purple-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Apa Kata Mereka?</h2>
+                <p class="text-lg text-gray-600">Testimoni real dari customer kami</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="flex items-center mb-4">
+                        <img src="https://static.photos/people/200x200/101" alt="Jesica" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Jesica - Mahasiswa</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Dalam 2 minggu pakai waist trainer dari FREYANA.ID, perutku jadi lebih rata dan postur tubuh lebih bagus. Teman-teman di kampus banyak yang nanya rahasianya!"</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                        Jakarta
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="flex items-center mb-4">
+                        <img src="https://static.photos/people/200x200/102" alt="Ratih" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Ratih - Ibu Rumah Tangga</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Setelah melahirkan 2 anak, bentuk tubuhku berubah total. Waist trainer ini membantu banget untuk mengembalikan kepercayaan diri. Suami pun lebih sayang lagi!"</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                        Surabaya
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="flex items-center mb-4">
+                        <img src="https://static.photos/people/200x200/103" alt="Dewi" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Dewi - Karyawan Kantor</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Kerja di kantor banyak duduk, perut jadi buncit. Setelah pakai waist trainer, perut jadi lebih kencang dan enak dipakai seharian. Bahannya adem dan tidak gerah!"</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                        Bandung
+                    </div>
+                </div>
+
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="flex items-center mb-4">
+                        <img src="https://static.photos/people/200x200/104" alt="Sari" class="w-12 h-12 rounded-full mr-3">
+                        <div>
+                            <h4 class="font-semibold">Sari - Pengusaha</h4>
+                            <div class="flex text-yellow-400 text-sm">
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                                <i data-feather="star" class="w-4 h-4 fill-current"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <p class="text-gray-700">"Sebagai pengusaha, penampilan adalah segalanya. Waist trainer ini perfect untuk dipakai ke kantor dan acara formal. Instant body goals! Worth every penny!"</p>
+                    <div class="mt-4 text-sm text-gray-500">
+                        <i data-feather="map-pin" class="w-4 h-4 inline mr-1"></i>
+                        Yogyakarta
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Use -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Cara Penggunaan</h2>
+                <p class="text-lg text-gray-600">Mudah dan praktis untuk hasil maksimal</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                <div class="text-center" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-20 h-20 bg-gradient-to-br from-pink-400 to-pink-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">1</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Pilih Ukuran</h3>
+                    <p class="text-gray-600">Pilih ukuran yang sesuai dengan lingkar pinggang Anda</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-20 h-20 bg-gradient-to-br from-purple-400 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">2</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Kenakan 6-8 Jam</h3>
+                    <p class="text-gray-600">Gunakan secara rutin setiap hari untuk hasil optimal</p>
+                </div>
+
+                <div class="text-center" data-aos="fade-up" data-aos-delay="300">
+                    <div class="w-20 h-20 bg-gradient-to-br from-blue-400 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <span class="text-2xl font-bold text-white">3</span>
+                    </div>
+                    <h3 class="text-xl font-semibold mb-2">Lihat Hasilnya</h3>
+                    <p class="text-gray-600">Bentuk tubuh lebih ideal dalam 30 hari</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Size Guide -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Panduan Ukuran</h2>
+                <p class="text-lg text-gray-600">Pastikan Anda memilih ukuran yang tepat</p>
+            </div>
+
+            <div class="bg-white rounded-2xl p-8 max-w-4xl mx-auto" data-aos="fade-up">
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left">
+                        <thead>
+                            <tr class="border-b-2 border-gray-200">
+                                <th class="pb-4 font-semibold">Ukuran</th>
+                                <th class="pb-4 font-semibold">Lingkar Pinggang (cm)</th>
+                                <th class="pb-4 font-semibold">Berat Badan (kg)</th>
+                                <th class="pb-4 font-semibold">Tinggi Badan (cm)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <span class="size-option active inline">S</span>
+                                </td>
+                                <td class="py-4">55-65</td>
+                                <td class="py-4">40-50</td>
+                                <td class="py-4">150-160</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <span class="size-option active inline">M</span>
+                                </td>
+                                <td class="py-4">65-75</td>
+                                <td class="py-4">50-60</td>
+                                <td class="py-4">155-165</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <span class="size-option active inline">L</span>
+                                </td>
+                                <td class="py-4">75-85</td>
+                                <td class="py-4">60-70</td>
+                                <td class="py-4">160-170</td>
+                            </tr>
+                            <tr class="border-b border-gray-100">
+                                <td class="py-4">
+                                    <span class="size-option active inline">XL</span>
+                                </td>
+                                <td class="py-4">85-95</td>
+                                <td class="py-4">70-80</td>
+                                <td class="py-4">165-175</td>
+                            </tr>
+                            <tr>
+                                <td class="py-4">
+                                    <span class="size-option active inline">XXL</span>
+                                </td>
+                                <td class="py-4">95-105</td>
+                                <td class="py-4">80-90</td>
+                                <td class="py-4">170-180</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="mt-6 p-4 bg-yellow-50 rounded-xl">
+                    <p class="text-sm text-yellow-800">
+                        <i data-feather="info" class="w-4 h-4 inline mr-2"></i>
+                        Jika Anda berada di antara dua ukuran, kami merekomendasikan untuk memilih ukuran yang lebih besar untuk kenyamanan maksimal.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Order Section -->
+    <section id="order" class="py-20 bg-gradient-to-br from-purple-600 to-pink-600 text-white">
+        <div class="container mx-auto px-4">
+            <div class="max-w-4xl mx-auto">
+                <div class="text-center mb-12" data-aos="fade-up">
+                    <h2 class="text-3xl lg:text-4xl font-display font-bold mb-4">Pesan Sekarang Juga!</h2>
+                    <p class="text-xl opacity-90">Dapatkan promo spesial hari ini</p>
+                </div>
+
+                <div class="grid lg:grid-cols-2 gap-12 items-center">
+                    <div data-aos="fade-right">
+                        <div class="bg-white rounded-2xl p-6 text-gray-900 mb-6">
+                            <div class="flex items-center justify-between mb-4">
+                                <h3 class="text-xl font-semibold">WAIST TRAINER CORSET</h3>
+                                <span class="badge-premium">PREMIUM</span>
+                            </div>
+                            
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600 mb-2">Pilih Warna:</p>
+                                <div class="flex gap-3">
+                                    <div class="color-option active" style="background: #000000" onclick="selectColor(this)"></div>
+                                    <div class="color-option" style="background: #f5e6d3" onclick="selectColor(this)"></div>
+                                </div>
+                            </div>
+
+                            <div class="mb-4">
+                                <p class="text-sm text-gray-600 mb-2">Pilih Ukuran:</p>
+                                <div class="flex gap-2 flex-wrap">
+                                    <span class="size-option active" onclick="selectSize(this)">S</span>
+                                    <span class="size-option" onclick="selectSize(this)">M</span>
+                                    <span class="size-option" onclick="selectSize(this)">L</span>
+                                    <span class="size-option" onclick="selectSize(this)">XL</span>
+                                    <span class="size-option" onclick="selectSize(this)">XXL</span>
+                                </div>
+                            </div>
+
+                            <div class="mb-6">
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-600">Harga Normal:</span>
+                                    <span class="text-gray-400 line-through">Rp 238.500</span>
+                                </div>
+                                <div class="flex items-center justify-between mb-2">
+                                    <span class="text-gray-600">Harga Promo:</span>
+                                    <span class="text-2xl font-bold text-purple-600">Rp 159.000</span>
+                                </div>
+                                <div class="flex items-center justify-between">
+                                    <span class="text-gray-600">Anda Hemat:</span>
+                                    <span class="text-green-600 font-semibold">Rp 79.500</span>
+                                </div>
+                            </div>
+
+                            <div class="bg-green-50 border border-green-200 rounded-xl p-4 mb-4">
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="gift" class="w-6 h-6 text-green-600"></i>
+                                    <div>
+                                        <p class="font-semibold text-green-800">GRATIS ONGKIR</p>
+                                        <p class="text-sm text-green-600">Khusus pembayaran hari ini</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="bg-red-50 border border-red-200 rounded-xl p-4">
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="clock" class="w-6 h-6 text-red-600"></i>
+                                    <div>
+                                        <p class="font-semibold text-red-800">STOK TERBATAS</p>
+                                        <p class="text-sm text-red-600">Tersisa <span id="stock-order">12</span> pcs saja</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="bg-white bg-opacity-20 rounded-2xl p-6">
+                            <h4 class="text-xl font-semibold mb-4">Keuntungan Belanja di FREYANA.ID</h4>
+                            <div class="space-y-3">
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-300"></i>
+                                    <span>Garansi 30 hari uang kembali</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-300"></i>
+                                    <span>Pengiriman cepat dan aman</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-300"></i>
+                                    <span>Produk original & berkualitas</span>
+                                </div>
+                                <div class="flex items-center gap-3">
+                                    <i data-feather="check-circle" class="w-5 h-5 text-green-300"></i>
+                                    <span>Customer service 24/7</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div data-aos="fade-left">
+                        <div class="bg-white rounded-2xl p-6 text-gray-900">
+                            <h3 class="text-2xl font-semibold mb-4 text-center">Form Pemesanan</h3>
+                            <div class="ooef">
+                                <form class="orderonline-embed-form" data-username="luna" data-product-slug="waist-trainer-corset" data-product-id="68c2670b1c71b7f59c0ad376" id="oo-embed-form-waist-trainer-corset-5876" data-origin="orderonline">
+                                    <div class="ooef-loader">
+                                        <style>
+                                            .ooef-loader {
+                                                visibility: hidden;
+                                                opacity: 0;
+                                                position: absolute;
+                                                left: 0;
+                                                right: 0;
+                                                top: 0;
+                                                bottom: 0;
+                                                display: flex;
+                                                justify-content: center;
+                                                align-items: center;
+                                                flex-direction: column;
+                                                animation: ooLoadingIn 10s ease;
+                                                -webkit-animation: ooLoadingIn 10s ease;
+                                                animation-fill-mode: forwards;
+                                                overflow: hidden
+                                            }
+
+                                            @keyframes ooLoadingIn {
+                                                0% {
+                                                    visibility: hidden;
+                                                    opacity: 0
+                                                }
+                                                20% {
+                                                    visibility: visible;
+                                                    opacity: 0
+                                                }
+                                                100% {
+                                                    visibility: visible;
+                                                    opacity: 1
+                                                }
+                                            }
+
+                                            @-webkit-keyframes ooLoadingIn {
+                                                0% {
+                                                    visibility: hidden;
+                                                    opacity: 0
+                                                }
+                                                20% {
+                                                    visibility: visible;
+                                                    opacity: 0
+                                                }
+                                                100% {
+                                                    visibility: visible;
+                                                    opacity: 1
+                                                }
+                                            }
+
+                                            .ooef-loader>div,
+                                            .ooef-loader>div:after {
+                                                border-radius: 50%;
+                                                width: 2.5rem;
+                                                height: 2.5rem
+                                            }
+
+                                            .ooef-loader>div {
+                                                font-size: 10px;
+                                                position: relative;
+                                                text-indent: -9999em;
+                                                border: .25rem solid #f5f5f5;
+                                                border-left: .25rem solid #55c4cf;
+                                                -webkit-transform: translateZ(0);
+                                                -ms-transform: translateZ(0);
+                                                transform: translateZ(0);
+                                                -webkit-animation: ooLoading 1.1s infinite linear;
+                                                animation: ooLoading 1.1s infinite linear
+                                            }
+
+                                            .ooef-loader.error>div {
+                                                border-left: .25rem solid #ff4500;
+                                                animation-duration: 5s
+                                            }
+
+                                            @-webkit-keyframes ooLoading {
+                                                0% {
+                                                    -webkit-transform: rotate(0);
+                                                    transform: rotate(0)
+                                                }
+                                                100% {
+                                                    -webkit-transform: rotate(360deg);
+                                                    transform: rotate(360deg)
+                                                }
+                                            }
+
+                                            @keyframes ooLoading {
+                                                0% {
+                                                    -webkit-transform: rotate(0);
+                                                    transform: rotate(0)
+                                                }
+                                                100% {
+                                                    -webkit-transform: rotate(360deg);
+                                                    transform: rotate(360deg)
+                                                }
+                                            }
+                                        </style>
+                                        <div aria-live="polite" role="status">
+                                            <div>Loading...</div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+   
+    <!-- Modal -->
+    <div id="imageModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <img id="modalImage" src="" alt="Product Image" class="w-full h-auto rounded-2xl">
+        </div>
+    </div>
+
+    <!-- Floating Order -->
+    <div id="floatingOrder" class="floating-order">
+        <div class="flex items-center justify-between mb-2">
+            <span class="text-sm font-semibold">Pesanan Terbaru</span>
+            <button onclick="closeFloatingOrder()" class="text-gray-400 hover:text-gray-600">
+                <i data-feather="x" class="w-4 h-4"></i>
+            </button>
+        </div>
+        <div class="flex items-center gap-3">
+            <div class="w-10 h-10 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center text-white font-bold text-sm">
+                RL
+            </div>
+            <div class="flex-1">
+                <p class="text-sm font-medium">Rani L. baru memesan</p>
+                <p class="text-xs text-gray-500">2 pcs - Jakarta</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+
+        // Initialize Feather Icons
+        feather.replace();
+
+        // Show buy now popup after 5 seconds
+        setTimeout(() => {
+            showBuyNowPopup();
+        }, 5000);
+
+        function showBuyNowPopup() {
+            const popup = document.createElement('div');
+            popup.className = 'fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50';
+            popup.innerHTML = `
+                <div class="bg-white rounded-2xl p-8 max-w-md mx-4 animate-pulse">
+                    <div class="text-center">
+                        <div class="w-16 h-16 bg-gradient-to-br from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                            <i data-feather="gift" class="w-8 h-8 text-white"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold text-gray-900 mb-2">Promo Spesial!</h3>
+                        <p class="text-gray-600 mb-6">Dapatkan gratis ongkir untuk pemesanan hari ini!</p>
+                        <button onclick="scrollToOrder()" class="btn-primary w-full py-3 px-6 rounded-xl font-semibold mb-3">
+                            BELI SEKARANG - GRATIS ONGKIR
+                        </button>
+                        <button onclick="closeBuyNowPopup()" class="text-gray-500 hover:text-gray-700 text-sm">
+                            Nanti saja
+                        </button>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(popup);
+            
+            // Re-initialize feather icons for the popup
+            feather.replace();
+        }
+
+        function closeBuyNowPopup() {
+            const popup = document.querySelector('.fixed.inset-0.bg-black');
+            if (popup) {
+                popup.remove();
+            }
+        }
+
+        // Auto-close popup after 15 seconds
+        setTimeout(() => {
+            closeBuyNowPopup();
+        }, 15000);
+
+        // Countdown Timer
+        function updateCountdown() {
+            const now = new Date();
+            const tomorrow = new Date(now);
+            tomorrow.setDate(tomorrow.getDate() + 1);
+            tomorrow.setHours(0, 0, 0, 0);
+            
+            const diff = tomorrow - now;
+            const hours = Math.floor(diff / (1000 * 60 * 60));
+            const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+            
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+        }
+        
+        setInterval(updateCountdown, 1000);
+        updateCountdown();
+
+        // Dynamic Counters
+        let stock = 12;
+        let viewers = 1234;
+        
+        setInterval(() => {
+            // Update stock
+            if (Math.random() > 0.7 && stock > 5) {
+                stock--;
+                document.getElementById('stock-counter').textContent = `Stok tersisa: ${stock} pcs`;
+                document.getElementById('stock-order').textContent = stock;
+            }
+            
+            // Update viewers
+            viewers += Math.floor(Math.random() * 5);
+            document.getElementById('viewer-count').textContent = `${viewers.toLocaleString()} orang melihat`;
+        }, 5000);
+
+        // Floating Order Animation
+        const names = ['Rani L.', 'Bella M.', 'Sari D.', 'Dewi K.', 'Ratih P.', 'Jesica W.'];
+        const cities = ['Jakarta', 'Surabaya', 'Bandung', 'Yogyakarta', 'Medan', 'Makassar'];
+        
+        function showFloatingOrder() {
+            const floatingOrder = document.getElementById('floatingOrder');
+            const randomName = names[Math.floor(Math.random() * names.length)];
+            const randomCity = cities[Math.floor(Math.random() * cities.length)];
+            const randomQty = Math.floor(Math.random() * 3) + 1;
+            
+            // Update content
+            floatingOrder.querySelector('.text-sm.font-medium').textContent = `${randomName} baru memesan`;
+            floatingOrder.querySelector('.text-xs.text-gray-500').textContent = `${randomQty} pcs - ${randomCity}`;
+            
+            // Show animation
+            floatingOrder.classList.add('show');
+            
+            setTimeout(() => {
+                floatingOrder.classList.remove('show');
+            }, 5000);
+        }
+        
+        // Show floating order every 10 seconds
+        setTimeout(() => {
+            showFloatingOrder();
+            setInterval(showFloatingOrder, 10000);
+        }, 3000);
+
+        function closeFloatingOrder() {
+            document.getElementById('floatingOrder').classList.remove('show');
+        }
+
+        // Modal Functions
+        function openModal(src) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('imageModal').style.display = 'block';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('imageModal').style.display = 'none';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close modal on click outside
+        window.onclick = function(event) {
+            const modal = document.getElementById('imageModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+
+        // Scroll to Order
+        function scrollToOrder() {
+            document.getElementById('order').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        // Color Selection
+        function selectColor(element) {
+            document.querySelectorAll('.color-option').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // Size Selection
+        function selectSize(element) {
+            document.querySelectorAll('.size-option').forEach(el => el.classList.remove('active'));
+            element.classList.add('active');
+        }
+
+        // OrderOnline Embed Script
+        if (typeof xLogError != 'function') {
+            var xLogError = function (error) {
+                var req = new XMLHttpRequest();
+                var payload = JSON.stringify({ url: document.location.href, line: error.line, stack: error.stack });
+                var params = 'message=' + encodeURIComponent(error.name) + '&payload=' + encodeURIComponent(payload) + '&type=embed&level=error';
+                req.open('POST', 'https://api.orderonline.id/log', true);
+                req.setRequestHeader('Content-type', 'application/x-www-form-urlencoded');
+                req.send(params);
+            };
+        }
+        
+        try {
+            if (typeof xEmbedScript != 'function') {
+                var xEmbedScript = function () {
+                    !function(w, d, e, v, id, t, s) {
+                        if (d.getElementById(id)) return;
+                        t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                        s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                    }(window, document, 'script', 'https://cdn.orderonline.id/js/embed-v2-slim.min.js?v=8.0.4', 'oo-embed-js');
+                };
+            }
+            
+            if (typeof xEmbedInit != 'function') {
+                var xEmbedInit = function (w, n) {
+                    if (w.ooe) return;
+                    n = w.ooe = function() { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments) };
+                    if (!w._ooe) w._ooe = n; n.push = n;n.loaded = !0;n.version = '8.0.4';n.queue = [];
+                };
+            }
+            
+            xEmbedInit(window);
+            ooe('setup', 'redirect', 'https://luna.orderonline.id');
+            ooe('init', '5f1133129d8e8e34501812c2', '68c2670b1c71b7f59c0ad376', '68c2670b1c71b7f59c0ad377', 'oo-embed-form-waist-trainer-corset-5876', {"mode":"page","action":"Klik untuk pemesanan","title":"Form Pemesanan","triggerPixel":true,"triggerGtm":false});
+            
+            if (!window.jQuery) {
+                !function(w, d, e, v, id, t, s) {
+                    if (d.getElementById(id)) return;
+                    t = d.createElement(e);t.async = !0;t.src = v;t.id = id;
+                    t.addEventListener('load', xEmbedScript);
+                    s = d.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+                }(window, document, 'script', 'https://cdn.orderonline.id/js/vendor/jquery.min.js', 'oo-embed-jquery');
+            } else {
+                xEmbedScript();
+            }
+        } catch (e) {
+            xLogError(e);
+            throw e;
+        }
+    </script>
+</body>
+</html>
